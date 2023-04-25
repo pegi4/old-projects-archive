@@ -1,0 +1,141 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+h1 {
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+h2 {
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+#title {
+    background-color: #ff4c68;
+    color: aliceblue;
+}
+.container-fluid {
+    padding: 3% 15% 7%;
+}
+.downloadbuttons {
+    margin: 5% 3% 5% 0%;
+}
+.image-title {
+    width: 20%;
+    transform: rotate(18deg);
+    position: absolute;
+    right: 23%;
+}
+/* NAVIGATION */
+.container {
+    padding: 0 0 3.5rem;
+    margin: 0 0;
+}
+
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3rem;
+}
+
+/* Features */
+
+#features {
+    padding: 7% 15%;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.feautures-center {
+    text-align: center;
+    padding: 0 7%;
+}
+.feautures-center p{
+    color:#8f8f8f;
+}
+.feautures-center i {
+    color: #ff788c;
+}
+.feautures-center h3 {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+.feautures-center i:hover {
+    color: #ff4c67cf;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.19));
+}
+
+/* Testimonials */
+
+#testimonials {
+    background-color:#FF4C68cf;
+    color:white;
+}
+
+.testimonials-image {
+    width: 10%;
+    border-radius: 100%;
+    margin:20px;
+}
+
+#press {
+    background-color:#FF4C68cf;
+    text-align: center;
+    padding-bottom: 3%;
+}
+.press-logo {
+    width: 10%;
+    margin: 20px 20px;
+}
+
+/*  Pricing  */
+
+#pricing { 
+    padding: 100px;
+}
+
+/* CTA */
+
+#cta {
+    background-color: #ff4c68;
+    color: #fff;
+}
+#cta button {
+    margin: 3% 1%;
+}
+
+/* FOOTER */
+
+#footer {
+    padding: 1% 0%;
+}
+
+.fo-space {
+    margin: 20px 10px;
+}
+/* Queries */
+
+@media (max-width: 990px) {
+    #title {
+        text-align: center;
+    }
+    .image-title {
+        position: static;
+        width: 60%;
+        margin-top: 25px;
+    }
+}
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* FUTURES */
+
+.offcanvas, .offcanvas-xxl, .offcanvas-xl, .offcanvas-lg, .offcanvas-md, .offcanvas-sm {
+    --bs-offcanvas-border-width: 0px;
+  }

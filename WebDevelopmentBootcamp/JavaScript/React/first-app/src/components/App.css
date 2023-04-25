@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.header {
+  font-size: xx-large;
+  background-color: #911e1e;
+  color: rgb(229, 208, 208);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #61dafb;
+  font-weight: bolder;
+}
+
+/*LIST*/
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+}
+
+.list li {
+  margin: 5px 0;
+}
