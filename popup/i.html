@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Image Pop-up Gallery</title>
+   <style>
+       .overlay {
+           display: none;
+           position: fixed;
+           z-index: 999;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-color: rgba(0, 0, 0, 0.7);
+       }
+
+       .popup {
+           display: none;
+           position: fixed;
+           z-index: 1000;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+       }
+
+       .popup img {
+           max-width: 100%;
+           max-height: 80vh;
+       }
+
+       .arrow {
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+           width: 25px;
+           height: 40px;
+           background-color: rgb(77, 77, 77);
+           font-size: 30px;
+           line-height: 40px;
+           text-align: center;
+           cursor: pointer;
+           transition: all 0.2s ease-in-out;
+       }
+
+       .arrow:hover {
+           
+       }
+
+       .arrow.left {
+           left: 20px;
+       }
+
+       .arrow.left:hover {
+           left: 15px;
+       }
+
+       .arrow.right {
+           right: 20px;
+       }
+
+       .arrow.right:hover {
+           right: 15px;
+       }
+
+       /* https://icons.getbootstrap.com/icons/arrow-left/ */
+
+   </style>
+</head>
+<body>
+   <p><a href="#" id="openPopup">Click here</a> to open the gallery</p>
+
+   <div class="overlay" id="overlay">
+       <div class="popup" id="popup">
+           <img id="popupImage" src="" alt="Image">
+       </div>
+       <div class="arrow left" id="prevArrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" fill="white"/>
+      </svg></div>
+       <div class="arrow right" id="nextArrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" fill="white"/>
+      </svg></div>
+   </div>
+
+    <script>
+      // Get references to the HTML elements
+      const openPopupLink = document.getElementById('openPopup');
+      const overlay = document.getElementById('overlay');
+      const popup = document.getElementById('popup');
+      const popupImage = document.getElementById('popupImage');
+      const prevArrow = document.getElementById('prevArrow');
+      const nextArrow = document.getElementById('nextArrow');
+   
+      // Create an array of image URLs
+      const imageUrls = ['/images/image1.jpg', '/images/image2.jpg', '/images/image3.jpg'];
+      let currentImageIndex = 0;
+   
+      // Function to update the displayed image
+      function updateImage() {
+          // Set the source of the image to display
+          popupImage.src = imageUrls[currentImageIndex];
+      }
+   
+      // Add click event listener to the openPopupLink
+      openPopupLink.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the default link behavior
+   
+          // Show the overlay and popup
+          overlay.style.display = 'block';
+          popup.style.display = 'block';
+   
+          // Update the displayed image
+          updateImage();
+      });
+   
+      // Add click event listener to the overlay to close the popup
+      overlay.addEventListener('click', function() {
+          // Hide the overlay and popup
+          overlay.style.display = 'none';
+          popup.style.display = 'none';
+      });
+   
+      // Add click event listener to the popup image to navigate to the next image
+      popupImage.addEventListener('click', function() {
+          // Increment the current image index
+          currentImageIndex++;
+   
+          // Reset the current image index if it exceeds the number of images
+          if (currentImageIndex >= imageUrls.length) {
+              currentImageIndex = 0;
+          }
+   
+          // Update the displayed image
+          updateImage();
+      });
+   
+      // Add click event listener to the previous arrow to navigate to the previous image
+      prevArrow.addEventListener('click', function(event) {
+          event.stopPropagation(); // Prevent event bubbling
+   
+          // Decrement the current image index
+          currentImageIndex--;
+   
+          // Wrap around to the last image if at the beginning
+          if (currentImageIndex < 0) {
+              currentImageIndex = imageUrls.length - 1;
+          }
+   
+          // Update the displayed image
+          updateImage();
+      });
+   
+      // Add click event listener to the next arrow to navigate to the next image
+      nextArrow.addEventListener('click', function(event) {
+          event.stopPropagation(); // Prevent event bubbling
+   
+          // Increment the current image index
+          currentImageIndex++;
+   
+          // Wrap around to the first image if at the end
+          if (currentImageIndex >= imageUrls.length) {
+              currentImageIndex = 0;
+          }
+   
+          // Update the displayed image
+          updateImage();
+      });
+   </script>
+</body>
+</html>
