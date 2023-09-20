@@ -1,0 +1,224 @@
+/* DEFAULT STUFF =================================*/
+*{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #284357;
+}
+body{
+    display: flexbox;
+    position: relative;
+    margin: 0;
+}
+
+/* FONTS & COLORS =================================*/
+h1,h2,h3,h4,h5{
+    font-weight: default; /* leave it as it is */
+    color: #284357;
+    font-size: 200%;
+}
+p{
+    color: rgb(144, 144, 144);
+    font-size: 130%;
+}
+a{
+    color: rgb(137, 137, 137);
+    text-decoration: none;
+    transition: 1s;
+}
+a:hover{
+    color: rgb(167, 167, 167);
+}
+hr{
+    opacity: 0.5;
+}
+
+/* BLOCKS =================================*/
+/* basic blocks */
+.screen{
+    width: 100vw;
+    min-height: 100vh;
+    display: flexbox;
+}
+.widget{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+#logo{
+    width: 300px;
+}
+#head{
+    height:20vh
+}
+
+/* form widget */
+.form-form > input{
+    width: 70vw;
+    font-size: 120%;
+    margin-bottom: 0.3em;
+    padding: 0.3em;
+    border: 1px solid #5cbae9;
+    border-radius: 0.3em;
+}
+.form-form > textarea{
+    font-size: 110%;
+    border: 1px solid #5cbae9;
+    width: 70vw;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    resize: none;
+}
+.submit-form{
+    background-color: #68c4f1;
+    transition: 0.6s;
+    border-radius: 0.3em;
+    font-size: 75%;
+    font-weight: bold;
+}
+.submit-form:hover{
+    background-color: #83cff5;
+}
+
+
+/* two parts widget */
+.widget-two-parts{
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+}
+.widget-left{
+    float:left;
+    padding:1em;
+    width: 50%;
+}
+.widget-right{
+    float:right;
+    width: 50%;
+    padding:1em;
+}
+.widget-two-parts-img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .widget-two-parts{
+        margin: 0 auto;
+        width: 70%;
+        display: block;
+    }
+    .widget-left{
+        float:left;
+        width: 100%;
+        padding:1em;
+    }
+    .widget-right{
+        float:right;
+        width: 100%;
+        padding:1em;
+    }
+    .widget-two-parts-img{
+        width: 100%;
+    }
+  }
+
+/* poster widget */
+.photo-poster{
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.poster-photo{
+    min-height: 80vh;
+    min-width: 100vw;
+    object-fit: cover;
+}
+.poster-photo-cover{
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    opacity: 0.8;
+}
+.poster-text-box{
+    position: absolute;
+    text-align: left;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 5em;
+    margin-left: 5em;
+}
+.poster-text-box > h1, .poster-text-box > p{
+    color: white;
+}
+.poster-text-box > h1{
+    margin: 0 0 0.2em 0;
+    font-weight: bolder;
+    font-size: 500%;
+}
+.poster-text-box > p{
+    margin: 0 0 0.5em 0;
+    font-weight: 100;
+    font-size: 250%;
+}
+
+/* gallery widget */
+.gallery{
+    position: relative;
+    display: flexbox;
+    font-size: 0;
+    width: 100%;
+}
+.gallery-photo-box{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    border:0.11vw white solid;
+}
+.gallery-photo-cover{
+    position: relative;
+    display: flex;
+    opacity: 0;
+    width: 33vw;
+    aspect-ratio: 1/1;
+    color:white;
+    font-size: 30px;
+    background-color: rgba(205, 205, 205, 0.65);
+    justify-content: center;
+    transition: 0.4s;
+}
+.gallery-photo-cover-img{
+    display: inline-block;
+    width: 15vw;
+    object-fit: contain;
+    user-select: none;
+}
+.gallery-photo-box:hover .gallery-photo-cover{
+    opacity: 1;
+}
+
+/* footer section */
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0;
+}
+#logo-footer{
+    width: 240px;
+}
+#copyright-text{
+    font-weight: thin;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    color: #284357;
+}
+#creadits{
+    font-weight: bolder;
+    color: rgb(197, 197, 197);
+    font-size: 75%;
+}
