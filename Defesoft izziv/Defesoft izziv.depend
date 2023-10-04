@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1696402293 source:d:\projects\defesoft izziv\main.cpp
+	<iostream>
+	<chrono>
+	<vector>
+	<string>
+
+1696402725 source:d:\projects\defesoft izziv\decode.cpp
+	<iostream>
+	<vector>
+	<cmath>
+
