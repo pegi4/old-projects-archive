@@ -1,0 +1,20 @@
+node_modules/
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Truffle and Ganache datoteke
+/build
+*.secret
+.env
+.history
+yarn.lock
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
